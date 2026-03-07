@@ -8,14 +8,14 @@ import gsap from "gsap";
 const BASE_URL = import.meta.env.BASE_URL;
 
 const words = [
-  { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
-  { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+  { text: "Scale",       imgPath: BASE_URL + "/images/ideas.svg" },
+  { text: "Speed",       imgPath: BASE_URL + "/images/speed.svg" },
   { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
-  { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
-  { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
-  { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+  { text: "Growth",      imgPath: BASE_URL + "/images/growth.svg" },
+  { text: "Scale",       imgPath: BASE_URL + "/images/ideas.svg" },
+  { text: "Speed",       imgPath: BASE_URL + "/images/speed.svg" },
   { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
-  { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
+  { text: "Growth",      imgPath: BASE_URL + "/images/growth.svg" },
 ];
 
 const Hero = () => {
@@ -36,135 +36,122 @@ const Hero = () => {
         <img src={BASE_URL + "/images/bg.png"} alt="background" />
       </div>
 
-      {/*
-        Layout: trên mobile xếp dọc (ảnh dưới text),
-        trên xl: 2 cột flex-row với flex-shrink kiểm soát kích thước
-      */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          paddingTop: "96px",
-          paddingBottom: "40px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "32px",
-          minHeight: "100dvh",
-          justifyContent: "center",
-        }}
-        className="hero-outer"
-      >
-        {/* LEFT — text content */}
-        <div
-          className="hero-left"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "24px",
-            padding: "0 20px",
-            width: "100%",
-            flexShrink: 1,
-            minWidth: 0,
-          }}
-        >
-          <div className="hero-badge w-fit">
-            <p>{t.hero.badge}</p>
-          </div>
+      {/* Layout wrapper */}
+      <div className="hero-layout">
 
-          <div className="hero-text">
-            <h1>
-              {t.hero.line1}
-              <span className="slide">
-                <span className="wrapper">
-                  {words.map((word, index) => (
-                    <span
-                      key={word.text + index}
-                      className="flex items-center gap-1 md:gap-3 pb-2"
-                    >
-                      <img
-                        src={word.imgPath}
-                        alt={word.text}
-                        className="object-contain rounded-full bg-white-50"
-                        style={{
-                          width: "clamp(22px, 3vw, 38px)",
-                          height: "clamp(22px, 3vw, 38px)",
-                          padding: "clamp(3px, 0.4vw, 7px)",
-                        }}
-                      />
-                      <span>{word.text}</span>
-                    </span>
-                  ))}
+        {/* LEFT — text */}
+        <header className="hero-left-col">
+          <div className="flex flex-col gap-5 md:gap-6">
+
+            <div className="hero-badge w-fit">
+              <p>{t.hero.badge}</p>
+            </div>
+
+            <div className="hero-text">
+              <h1>
+                {t.hero.line1}
+                <span className="slide">
+                  <span className="wrapper">
+                    {words.map((word, index) => (
+                      <span
+                        key={word.text + index}
+                        className="flex items-center gap-1 md:gap-3 pb-2"
+                      >
+                        <img
+                          src={word.imgPath}
+                          alt={word.text}
+                          className="object-contain rounded-full bg-white-50"
+                          style={{
+                            width: "clamp(20px, 2.4vw, 36px)",
+                            height: "clamp(20px, 2.4vw, 36px)",
+                            padding: "clamp(3px, 0.35vw, 7px)",
+                          }}
+                        />
+                        <span>{word.text}</span>
+                      </span>
+                    ))}
+                  </span>
                 </span>
-              </span>
-            </h1>
-            <h1>{t.hero.line2}</h1>
-            <h1>{t.hero.line3}</h1>
-          </div>
+              </h1>
+              <h1>{t.hero.line2}</h1>
+              <h1>{t.hero.line3}</h1>
+            </div>
 
-          <p
-            className="text-white-50"
-            style={{
-              fontSize: "clamp(14px, 1.5vw, 18px)",
-              lineHeight: 1.6,
-              maxWidth: "520px",
-            }}
-          >
-            {t.hero.description}
-          </p>
+            <p className="text-white-50 text-sm md:text-base lg:text-lg relative z-10 pointer-events-none"
+               style={{ maxWidth: "480px" }}>
+              {t.hero.description}
+            </p>
 
-          <div style={{ display: "inline-flex", paddingBottom: "4px" }}>
-            <Button text={t.hero.cta} id="counter" />
+            <div style={{ display: "inline-flex", paddingBottom: "4px" }}>
+              <Button text={t.hero.cta} id="counter" />
+            </div>
+
           </div>
-        </div>
+        </header>
 
         {/* RIGHT — flip image */}
-        <div
-          className="hero-right"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-            width: "100%",
-          }}
-        >
+        <figure className="hero-right-col">
           <HeroExperience />
-        </div>
+        </figure>
+
       </div>
 
       <AnimatedCounter />
 
-      {/* Responsive layout styles */}
       <style>{`
-        @media (min-width: 1280px) {
-          .hero-outer {
-            flex-direction: row !important;
-            padding-left: 48px !important;
-            padding-right: 48px !important;
-            gap: 0 !important;
-          }
-          .hero-left {
-            flex: 1 1 0% !important;
-            max-width: 52% !important;
-            padding: 0 40px 0 20px !important;
-          }
-          .hero-right {
-            flex: 0 0 44% !important;
-            width: 44% !important;
-            max-width: 44% !important;
-            min-height: 420px !important;
+        /* Base: mobile stacked */
+        .hero-left-col {
+          width: 100%;
+          padding: 0 20px;
+          z-index: 10;
+          min-width: 0;
+        }
+        .hero-right-col {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          margin: 0;
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) {
+          .hero-left-col {
+            padding: 0 40px;
           }
         }
-        @media (min-width: 768px) and (max-width: 1279px) {
-          .hero-left {
-            padding: 0 40px !important;
-            max-width: 680px !important;
-            align-self: center !important;
+
+        /* Desktop xl — side by side */
+        @media (min-width: 1280px) {
+          .hero-left-col {
+            flex: 0 0 55% !important;
+            max-width: 55% !important;
+            padding: 0 32px 0 48px !important;
           }
-          .hero-right {
-            max-width: 360px !important;
+          .hero-right-col {
+            flex: 0 0 45% !important;
+            max-width: 45% !important;
+            min-height: 420px;
+          }
+          /* Font scale down so 3 lines stay in 55% column */
+          .hero-text {
+            font-size: clamp(24px, 2.9vw, 46px) !important;
+          }
+          .hero-text .slide {
+            height: clamp(34px, 4.2vw, 60px) !important;
+            padding-bottom: clamp(16px, 2.2vw, 28px) !important;
+          }
+        }
+
+        /* 2xl — allow slightly bigger */
+        @media (min-width: 1536px) {
+          .hero-text {
+            font-size: clamp(32px, 3.2vw, 58px) !important;
+          }
+          .hero-text .slide {
+            height: clamp(44px, 4.8vw, 72px) !important;
+            padding-bottom: clamp(20px, 2.8vw, 34px) !important;
           }
         }
       `}</style>
