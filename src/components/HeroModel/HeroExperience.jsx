@@ -1,37 +1,83 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
 const HeroExperience = () => {
-  const [isFlipped, setIsFlipped] = useState(false)
-
-  const handleMouseEnter = () => {
-    setIsFlipped(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsFlipped(false)
-  }
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="image-flip-container">
-      <div 
-        className={`image-flip-wrapper ${isFlipped ? 'flipped' : ''}`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        onMouseEnter={() => setIsFlipped(true)}
+        onMouseLeave={() => setIsFlipped(false)}
+        style={{
+          position: "relative",
+          cursor: "pointer",
+          perspective: "1000px",
+          transformStyle: "preserve-3d",
+          /* Kích thước lớn hơn — responsive bằng clamp */
+          width: "clamp(220px, 38vw, 420px)",
+          height: "clamp(220px, 38vw, 420px)",
+          borderRadius: "50%",
+          border: "4px solid #99FFCC",
+          boxShadow: "0 0 40px rgba(153,255,204,0.25), 0 0 80px rgba(82,174,255,0.15)",
+          flexShrink: 0,
+        }}
       >
-        {/* Front Image */}
-        <div className="image-flip-front">
-          <img src={`${BASE_URL}/images/anh1.png`} alt="Image 1" />
+        {/* FRONT */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "50%",
+            overflow: "hidden",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            transition: "opacity 0.5s ease, transform 0.5s ease",
+            opacity: isFlipped ? 0 : 1,
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+            zIndex: isFlipped ? 0 : 1,
+          }}
+        >
+          <img
+            src={BASE_URL + "/images/anh1.png"}
+            alt="Phuc Hai"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </div>
-        
-        {/* Back Image */}
-        <div className="image-flip-back">
-          <img src={`${BASE_URL}/images/anh2.jpg`} alt="Image 2" />
+
+        {/* BACK */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "50%",
+            overflow: "hidden",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            transition: "opacity 0.5s ease, transform 0.5s ease",
+            opacity: isFlipped ? 1 : 0,
+            transform: isFlipped ? "rotateY(0deg)" : "rotateY(-180deg)",
+            zIndex: isFlipped ? 1 : 0,
+          }}
+        >
+          <img
+            src={BASE_URL + "/images/anh2.jpg"}
+            alt="Phuc Hai alt"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroExperience
+export default HeroExperience;

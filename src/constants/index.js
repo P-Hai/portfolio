@@ -206,7 +206,7 @@ const socialImgs = [
   {
     name: "insta",
     url: "https://www.instagram.com/im.marcus___/",
-    imgPath: `${BASE_URL}/images/insta.png`,
+    imgPath: `${BASE_URL}/images/instagram.jpg`,
   },
   {
     name: "fb",

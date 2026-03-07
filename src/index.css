@@ -96,19 +96,31 @@ html.light section {
     @apply grid grid-cols-1 xl:grid-cols-12 gap-10;
   }
 
+  /* ========================= */
+  /* HERO LAYOUT */
+  /* ========================= */
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 flex flex-col xl:flex-row xl:h-dvh h-auto xl:items-center items-center justify-center gap-8 xl:gap-0;
+    @apply relative z-10 pt-24 pb-10 md:pt-28 xl:pt-0 xl:mt-20 flex flex-col xl:flex-row xl:h-dvh h-auto xl:items-center items-center justify-center gap-6 xl:gap-0;
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[20px] font-semibold relative z-10 pointer-events-none px-5 md:px-10 lg:px-8;
+    @apply flex flex-col justify-center font-semibold relative z-10 pointer-events-none;
+    font-size: clamp(28px, 6vw, 60px);
+    line-height: 1.15;
 
     img {
-      @apply size-8 md:size-10 object-contain;
+      @apply object-contain;
+      width: clamp(24px, 4vw, 40px);
+      height: clamp(24px, 4vw, 40px);
     }
 
     .slide {
-      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+      @apply absolute overflow-hidden;
+      padding: 0 clamp(8px, 2vw, 20px);
+      height: clamp(40px, 7vw, 78px);
+      padding-top: 0;
+      padding-bottom: clamp(20px, 4vw, 30px);
+      translate: 0 clamp(2px, 0.5vw, 4px);
     }
   }
 
@@ -117,7 +129,8 @@ html.light section {
   }
 
   .hero-3d-layout {
-    @apply xl:w-[50%] lg:ml-12 xl:ml-32 xl:h-full xl:min-h-[50vh] w-full h-64 md:h-80 relative pointer-events-none;
+    @apply w-full xl:w-[50%] xl:h-full h-auto flex items-center justify-center;
+    min-height: clamp(220px, 40vw, 400px);
   }
 
   /* Image Flip Animation Styles */
@@ -126,16 +139,14 @@ html.light section {
   }
 
   .image-flip-wrapper {
-    @apply relative cursor-pointer overflow-hidden mt-10 md:mt-0 pointer-events-auto;
+    @apply relative cursor-pointer overflow-hidden pointer-events-auto;
     perspective: 1000px;
     transform-style: preserve-3d;
     border: 4px solid #99FFCC;
-
-    /* Responsive sizing - make it circular */
-    width: clamp(140px, 50vw, 300px);
-    @apply sm:w-56 md:w-64 lg:w-72 xl:w-80;
+    width: clamp(160px, 45vw, 300px);
     aspect-ratio: 1;
     border-radius: 50%;
+    margin-top: clamp(8px, 2vw, 40px);
 
     &.flipped {
       .image-flip-front {
@@ -171,23 +182,26 @@ html.light section {
     transform: rotateY(180deg);
   }
 
+  /* ========================= */
+  /* NAVBAR */
+  /* ========================= */
   .navbar {
-    @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
+    @apply fixed w-full left-1/2 py-4 px-5 md:px-10 lg:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
 
     &.scrolled {
       @apply top-0 bg-black;
     }
 
     &.not-scrolled {
-      @apply md:top-10 top-0 bg-transparent;
+      @apply top-0 bg-transparent;
     }
 
     .inner {
-      @apply mx-auto flex items-center justify-between;
+      @apply mx-auto flex items-center justify-between gap-4;
     }
 
     .logo {
-      @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+      @apply text-white-50 text-base md:text-xl font-semibold transition-transform duration-300 hover:scale-105 flex-shrink-0;
     }
 
     nav.desktop {
@@ -214,7 +228,7 @@ html.light section {
       @apply flex;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply px-4 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300 text-sm md:text-base whitespace-nowrap;
 
         span {
           @apply group-hover:text-white transition-colors duration-300;
@@ -223,16 +237,32 @@ html.light section {
     }
 
     .navbar-actions {
-      @apply hidden md:flex items-center gap-4;
+      @apply flex items-center gap-2 md:gap-4;
+    }
 
-      .language-selector {
-        button {
-          @apply transition-all duration-300;
+    /* Hamburger menu button */
+    .hamburger-btn {
+      @apply flex lg:hidden items-center justify-center w-10 h-10 rounded-lg bg-black-200 hover:bg-black-50 transition-all cursor-pointer;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      @apply lg:hidden absolute top-full left-0 w-full bg-black border-t border-black-50 py-4 px-5;
+
+      ul {
+        @apply flex flex-col gap-4;
+
+        li {
+          @apply text-white-50;
+
+          a {
+            @apply block py-2 text-lg transition-colors duration-300 hover:text-white;
+          }
         }
       }
 
-      .theme-toggle {
-        @apply flex items-center justify-center transition-all duration-300;
+      .mobile-contact-btn {
+        @apply mt-4 w-full py-3 rounded-lg bg-white text-black font-semibold text-center block;
       }
     }
   }
@@ -241,14 +271,13 @@ html.light section {
   /* LIGHT MODE COMPREHENSIVE STYLES */
   /* ============================================= */
 
-  /* Light mode navbar adjustments */
   html.light .navbar {
     &.scrolled {
       @apply top-0 bg-white border-b border-gray-200;
     }
 
     &.not-scrolled {
-      @apply md:top-10 top-0 bg-white/80 backdrop-blur;
+      @apply top-0 bg-white/90 backdrop-blur;
     }
 
     .logo {
@@ -269,7 +298,7 @@ html.light section {
 
     .contact-btn {
       .inner {
-        @apply bg-gray-300 text-white hover:bg-gray-700;
+        @apply bg-gray-800 text-white hover:bg-gray-700;
 
         span {
           @apply hover:text-gray-100;
@@ -283,26 +312,41 @@ html.light section {
       button {
         @apply text-gray-700 transition-all duration-300;
 
-        &.active {
-          @apply bg-gray-900 text-white;
-        }
-
-        &:hover:not(.active) {
+        &:hover {
           @apply text-gray-900;
         }
       }
     }
 
     .theme-toggle {
-      @apply bg-gray-200 hover:bg-gray-300 transition-all duration-300;
+      @apply bg-gray-200 hover:bg-gray-300;
 
       svg {
         @apply text-gray-900;
       }
     }
+
+    .hamburger-btn {
+      @apply bg-gray-200 hover:bg-gray-300;
+
+      svg {
+        @apply text-gray-900;
+      }
+    }
+
+    .mobile-menu {
+      @apply bg-white border-gray-200;
+
+      ul li a {
+        @apply text-gray-700 hover:text-gray-900;
+      }
+
+      .mobile-contact-btn {
+        @apply bg-gray-900 text-white;
+      }
+    }
   }
 
-  /* Light mode hero section adjustments */
   html.light {
     .hero-text {
       color: #1a1a1a;
@@ -317,13 +361,6 @@ html.light section {
       color: #1a1a1a;
     }
 
-    .slide span {
-      img {
-        @apply bg-gray-200;
-      }
-    }
-
-    /* Card and glowing border styles for light mode */
     .card {
       position: relative;
       z-index: 40;
@@ -376,7 +413,6 @@ html.light section {
       filter: saturate(200);
     }
 
-    /* Light mode app showcase adjustments */
     .app-showcase {
       @apply bg-white;
 
@@ -387,10 +423,6 @@ html.light section {
 
         .text-content {
           @apply space-y-5 mt-5;
-
-          .badges {
-            @apply flex gap-2 mb-4;
-          }
 
           h2 {
             @apply text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900;
@@ -403,64 +435,20 @@ html.light section {
       }
 
       .project-list-wrapper {
-        @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
-
-        .image-wrapper {
-          @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        h2 {
+          @apply text-gray-900;
         }
 
-        img {
-          @apply w-full h-full object-contain rounded-xl;
-        }
-
-        .project {
-          @apply flex flex-col;
-
-          &.card {
-            @apply p-8;
-          }
-
-          h2 {
-            @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5 text-gray-900;
-          }
-
-          p {
-            @apply text-gray-700;
-          }
+        p {
+          @apply text-gray-700;
         }
       }
     }
 
-    /* CTA Button - Light Theme */
-    .light {
-      .cta-button {
-        @apply w-full px-4 py-4 rounded-lg bg-black flex justify-center items-center relative cursor-pointer overflow-hidden;
-
-        .bg-circle {
-          @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 w-[120%] h-[120%] group-hover:size-10 group-hover:right-10 rounded-full bg-white transition-all duration-500;
-        }
-
-        .text {
-          @apply uppercase md:text-lg text-white transition-all duration-500 group-hover:text-black group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
-        }
-
-        .arrow-wrapper {
-          @apply group-hover:bg-white size-10 rounded-full absolute right-10 top-1/2 -translate-y-1/2 flex justify-center items-center overflow-hidden;
-
-          img {
-            @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
-            filter: brightness(0) invert(0);
-          }
-        }
-      }
-    }
-
-    /* CTA Wrapper */
     .cta-wrapper {
       @apply relative z-20 cursor-pointer;
     }
 
-    /* Timeline light mode */
     .timeline-wrapper {
       @apply absolute top-0 xl:left-[35.5vw] md:left-10 left-5 h-full flex justify-center;
     }
@@ -473,13 +461,6 @@ html.light section {
       @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-gray-300 bg-white overflow-hidden;
     }
 
-    .timeline-card {
-      .card-border {
-        @apply border-gray-300 bg-white;
-      }
-    }
-
-    /* Tech stack light mode */
     .tech-card {
       @apply bg-white border border-gray-300;
     }
@@ -502,7 +483,6 @@ html.light section {
       @apply md:w-40 w-32;
     }
 
-    /* Form light mode */
     form {
       label {
         @apply text-gray-800;
@@ -510,23 +490,10 @@ html.light section {
 
       input,
       textarea {
-        @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-gray-600 bg-gray-100 border border-gray-300 rounded-md text-gray-900;
-
-        &::placeholder {
-          color: #9ca3af;
-        }
-      }
-
-      a {
-        @apply w-full py-4 bg-gray-900 text-white font-semibold rounded-md flex justify-center items-center gap-2 hover:bg-gray-800;
-
-        img {
-          @apply inline-block;
-        }
+        @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-gray-500 bg-gray-100 border border-gray-300 rounded-md text-gray-900;
       }
     }
 
-    /* Footer light mode */
     .footer {
       @apply text-gray-800;
 
@@ -537,15 +504,10 @@ html.light section {
       .socials {
         .icon {
           @apply border border-gray-300 bg-white hover:bg-gray-100;
-
-          img {
-            @apply inline-block;
-          }
         }
       }
     }
 
-    /* Text color conversions */
     .text-white-50 {
       color: #4a5568 !important;
     }
@@ -558,12 +520,7 @@ html.light section {
       color: #6b7280 !important;
     }
 
-    /* Border color conversions */
     .border-black-50 {
-      @apply border-gray-300;
-    }
-
-    .border-black-100 {
       @apply border-gray-300;
     }
 
@@ -571,7 +528,6 @@ html.light section {
       @apply border-gray-300;
     }
 
-    /* Background color conversions */
     .bg-black {
       @apply bg-white;
     }
@@ -592,12 +548,10 @@ html.light section {
       @apply bg-gray-100;
     }
 
-    /* Image flip wrapper light mode */
     .image-flip-wrapper {
       border-color: #4a5568;
     }
 
-    /* Gradient lines for light mode */
     .gradient-line {
       width: 2px;
       background: linear-gradient(0deg,
@@ -622,12 +576,10 @@ html.light section {
           rgba(255, 255, 255, 0) 100%);
     }
 
-    /* Ensure main sections have light background */
     section {
       @apply bg-white;
     }
 
-    /* Additional text color fixes for light mode */
     h1,
     h2,
     h3,
@@ -647,24 +599,11 @@ html.light section {
       @apply text-gray-900 hover:text-gray-700;
     }
 
-    /* Badge styling for light mode */
-    .badges {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-
-      .badge {
-        @apply px-3 py-1 rounded-full text-sm bg-gray-200 text-gray-900;
-      }
-    }
-
-    /* Fix arrow SVG in buttons for light mode */
     .btn-arrow,
     .arrow-wrapper img {
       filter: brightness(0);
     }
 
-    /* Experience cards text fix */
     .timeline-card {
 
       .text-white-50,
@@ -682,7 +621,6 @@ html.light section {
       }
     }
 
-    /* Certification cards text fix */
     .certification-card {
       h3 {
         @apply text-gray-900;
@@ -693,20 +631,11 @@ html.light section {
       }
     }
 
-    /* Hero section text fix */
     .hero-text h1,
     .hero-text span {
       @apply text-gray-900;
     }
 
-    /* Fix icon backgrounds in tech stack */
-    .tech-icon-wrapper {
-      img {
-        filter: none;
-      }
-    }
-
-    /* Form elements text */
     form input::placeholder,
     form textarea::placeholder {
       color: #9ca3af !important;
@@ -721,7 +650,6 @@ html.light section {
       @apply text-gray-900;
     }
 
-    /* Form submit button - override cta-button for contact form */
     form button {
       background: none;
       border: none;
@@ -750,38 +678,38 @@ html.light section {
       }
     }
 
-    /* Adjust button submit text */
     button {
       color: inherit;
     }
 
-    /* Contact form grid background */
     .card-border {
       @apply bg-white border-gray-300;
     }
 
-    /* Adjust marquee text in light mode */
     .marquee-box {
       color: #1a1a1a;
     }
   }
 
+  /* ========================= */
+  /* APP SHOWCASE */
+  /* ========================= */
   .app-showcase {
-    @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
+    @apply w-full mt-16 md:mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
     .showcaselayout {
-      @apply flex xl:flex-row flex-col gap-10 justify-between;
+      @apply flex xl:flex-row flex-col gap-10 justify-between w-full;
     }
 
     .first-project-wrapper {
       @apply h-full flex flex-col justify-between xl:w-[60%];
 
       &.card {
-        @apply p-8;
+        @apply p-5 md:p-8;
       }
 
       .image-wrapper {
-        @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+        @apply xl:h-[70vh] md:h-[50vh] h-60 relative;
 
         img {
           @apply w-full h-full object-cover rounded-xl absolute inset-0;
@@ -789,23 +717,23 @@ html.light section {
       }
 
       .text-content {
-        @apply space-y-5 mt-5;
+        @apply space-y-3 md:space-y-5 mt-4 md:mt-5;
 
         .badges {
-          @apply flex gap-2 mb-4;
+          @apply flex gap-2 mb-3 md:mb-4;
         }
 
         h2 {
-          @apply text-2xl md:text-3xl lg:text-4xl font-bold text-white-50;
+          @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white-50;
         }
       }
     }
 
     .project-list-wrapper {
-      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+      @apply flex md:flex-row flex-col xl:flex-col gap-6 md:gap-10 xl:w-[40%];
 
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply xl:h-[37vh] md:h-52 lg:h-72 h-52 relative rounded-xl xl:px-5 2xl:px-12 py-0;
       }
 
       img {
@@ -816,16 +744,19 @@ html.light section {
         @apply flex flex-col;
 
         &.card {
-          @apply p-8;
+          @apply p-5 md:p-8;
         }
       }
 
       h2 {
-        @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5 text-white-50;
+        @apply text-base md:text-lg lg:text-xl xl:text-2xl font-semibold mt-4 md:mt-5 text-white-50;
       }
     }
   }
 
+  /* ========================= */
+  /* CTA BUTTON */
+  /* ========================= */
   .cta-wrapper {
     @apply relative z-20 cursor-pointer w-full;
   }
@@ -879,7 +810,7 @@ html.light section {
   }
 
   .gradient-edge {
-    @apply w-36 h-full absolute bottom-0 z-20;
+    @apply w-20 md:w-36 h-full absolute bottom-0 z-20;
   }
 
   .tech-card-animated-bg {
@@ -890,26 +821,26 @@ html.light section {
     @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
 
     & p {
-      @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
+      @apply text-base md:text-lg 2xl:text-2xl pb-4 xl:pb-0 font-semibold text-white-50 text-center px-2;
     }
   }
 
   .tech-grid {
-    @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
+    @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 xl:gap-16 md:gap-10 gap-4 mt-10 md:mt-16;
   }
 
   .tech-icon-wrapper {
-    @apply flex justify-center items-center w-52 h-60 relative;
+    @apply flex justify-center items-center w-full h-48 md:h-52 xl:h-60 relative;
   }
 
   form {
     label {
-      @apply block text-white-50 mb-2;
+      @apply block text-white-50 mb-2 text-sm md:text-base;
     }
 
     input,
     textarea {
-      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+      @apply w-full px-4 py-3 md:py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
     }
 
     a {
@@ -929,11 +860,11 @@ html.light section {
     }
 
     p {
-      @apply text-center md:text-start;
+      @apply text-center md:text-start text-sm md:text-base;
     }
 
     .socials {
-      @apply flex items-center justify-center gap-5;
+      @apply flex items-center justify-center gap-3 md:gap-5;
 
       .icon {
         @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
@@ -946,7 +877,9 @@ html.light section {
   }
 }
 
-/* Hero text slider starts */
+/* ========================= */
+/* HERO TEXT SLIDER */
+/* ========================= */
 .slide {
   display: inline-block;
   flex-direction: column;
@@ -993,8 +926,9 @@ html.light section {
   }
 }
 
-/* Hero Text slider ends */
-
+/* ========================= */
+/* GRADIENT */
+/* ========================= */
 .gradient-line {
   width: 2px;
   background: linear-gradient(0deg,
@@ -1020,7 +954,9 @@ html.light section {
       rgba(255, 255, 255, 0) 100%);
 }
 
-/* marquee */
+/* ========================= */
+/* MARQUEE */
+/* ========================= */
 .marquee {
   width: 100dvw;
   overflow: hidden;
@@ -1051,8 +987,9 @@ html.light section {
   }
 }
 
-/* marquee end */
-
+/* ========================= */
+/* CARD / GLOW */
+/* ========================= */
 .card {
   --start: 0;
   position: relative;
