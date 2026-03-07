@@ -8,14 +8,14 @@ import gsap from "gsap";
 const BASE_URL = import.meta.env.BASE_URL;
 
 const words = [
-  { text: "Scale", imgPath: `${BASE_URL}/images/ideas.svg` },
-  { text: "Speed", imgPath: `${BASE_URL}/images/speed.svg` },
-  { text: "Reliability", imgPath: `${BASE_URL}/images/reliability.png` },
-  { text: "Growth", imgPath: `${BASE_URL}/images/growth.svg` },
-  { text: "Scale", imgPath: `${BASE_URL}/images/ideas.svg` },
-  { text: "Speed", imgPath: `${BASE_URL}/images/speed.svg` },
-  { text: "Reliability", imgPath: `${BASE_URL}/images/reliability.png` },
-  { text: "Growth", imgPath: `${BASE_URL}/images/growth.svg` },
+  { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
+  { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+  { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
+  { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
+  { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
+  { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+  { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
+  { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
 ];
 
 const Hero = () => {
@@ -31,67 +31,143 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
+      {/* Background */}
       <div className="absolute top-0 left-0 z-10 pointer-events-none">
-        <img src={`${BASE_URL}/images/bg.png`} alt="background" />
+        <img src={BASE_URL + "/images/bg.png"} alt="background" />
       </div>
 
-      <div className="hero-layout">
-        {/* LEFT */}
-        <header className="flex flex-col justify-center w-full xl:flex-1 xl:max-w-[50%] px-5 md:px-10 lg:px-12 z-10">
-          <div className="flex flex-col gap-5 md:gap-7">
-            <div className="hero-badge w-fit">
-              <p>{t.hero.badge}</p>
-            </div>
+      {/*
+        Layout: trên mobile xếp dọc (ảnh dưới text),
+        trên xl: 2 cột flex-row với flex-shrink kiểm soát kích thước
+      */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          paddingTop: "96px",
+          paddingBottom: "40px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "32px",
+          minHeight: "100dvh",
+          justifyContent: "center",
+        }}
+        className="hero-outer"
+      >
+        {/* LEFT — text content */}
+        <div
+          className="hero-left"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "24px",
+            padding: "0 20px",
+            width: "100%",
+            flexShrink: 1,
+            minWidth: 0,
+          }}
+        >
+          <div className="hero-badge w-fit">
+            <p>{t.hero.badge}</p>
+          </div>
 
-            <div className="hero-text">
-              <h1>
-                {t.hero.line1}
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={`${word.text}-${index}`}
-                        className="flex items-center gap-1 md:gap-3 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt={word.text}
-                          className="object-contain rounded-full bg-white-50"
-                          style={{
-                            width: "clamp(22px, 3.5vw, 40px)",
-                            height: "clamp(22px, 3.5vw, 40px)",
-                            padding: "clamp(3px, 0.5vw, 8px)",
-                          }}
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
-                  </span>
+          <div className="hero-text">
+            <h1>
+              {t.hero.line1}
+              <span className="slide">
+                <span className="wrapper">
+                  {words.map((word, index) => (
+                    <span
+                      key={word.text + index}
+                      className="flex items-center gap-1 md:gap-3 pb-2"
+                    >
+                      <img
+                        src={word.imgPath}
+                        alt={word.text}
+                        className="object-contain rounded-full bg-white-50"
+                        style={{
+                          width: "clamp(22px, 3vw, 38px)",
+                          height: "clamp(22px, 3vw, 38px)",
+                          padding: "clamp(3px, 0.4vw, 7px)",
+                        }}
+                      />
+                      <span>{word.text}</span>
+                    </span>
+                  ))}
                 </span>
-              </h1>
-              <h1>{t.hero.line2}</h1>
-              <h1>{t.hero.line3}</h1>
-            </div>
-
-            <p className="text-white-50 text-sm md:text-lg lg:text-xl relative z-10 pointer-events-none">
-              {t.hero.description}
-            </p>
-
-            <div className="w-full max-w-[280px] md:max-w-[220px]">
-              <Button text={t.hero.cta} id="counter" />
-            </div>
+              </span>
+            </h1>
+            <h1>{t.hero.line2}</h1>
+            <h1>{t.hero.line3}</h1>
           </div>
-        </header>
 
-        {/* RIGHT */}
-        <figure className="w-full xl:w-[45%] flex items-center justify-center z-10">
-          <div className="hero-3d-layout">
-            <HeroExperience />
+          <p
+            className="text-white-50"
+            style={{
+              fontSize: "clamp(14px, 1.5vw, 18px)",
+              lineHeight: 1.6,
+              maxWidth: "520px",
+            }}
+          >
+            {t.hero.description}
+          </p>
+
+          <div style={{ display: "inline-flex", paddingBottom: "4px" }}>
+            <Button text={t.hero.cta} id="counter" />
           </div>
-        </figure>
+        </div>
+
+        {/* RIGHT — flip image */}
+        <div
+          className="hero-right"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            width: "100%",
+          }}
+        >
+          <HeroExperience />
+        </div>
       </div>
 
       <AnimatedCounter />
+
+      {/* Responsive layout styles */}
+      <style>{`
+        @media (min-width: 1280px) {
+          .hero-outer {
+            flex-direction: row !important;
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+            gap: 0 !important;
+          }
+          .hero-left {
+            flex: 1 1 0% !important;
+            max-width: 52% !important;
+            padding: 0 40px 0 20px !important;
+          }
+          .hero-right {
+            flex: 0 0 44% !important;
+            width: 44% !important;
+            max-width: 44% !important;
+            min-height: 420px !important;
+          }
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+          .hero-left {
+            padding: 0 40px !important;
+            max-width: 680px !important;
+            align-self: center !important;
+          }
+          .hero-right {
+            max-width: 360px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
