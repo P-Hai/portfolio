@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const GlowCard = ({ card, index, children }) => {
   // refs for all the cards
   const cardRefs = useRef([]);
@@ -35,7 +37,7 @@ const GlowCard = ({ card, index, children }) => {
       <div className="glow"></div>
       <div className="flex items-center gap-1 mb-5">
         {Array.from({ length: 5 }, (_, i) => (
-          <img key={i} src="/images/star.png" alt="star" className="size-5" />
+          <img key={i} src={`${BASE_URL}/images/star.png`} alt="star" className="size-5" />
         ))}
       </div>
       <div className="mb-5">

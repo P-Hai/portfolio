@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const AppShowcase = () => {
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
@@ -78,7 +80,7 @@ const AppShowcase = () => {
               rel="noopener noreferrer"
               className="image-wrapper hover:opacity-80 transition-opacity duration-300"
             >
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+              <img src={`${BASE_URL}/images/project1.png`} alt="Ryde App Interface" />
             </a>
             <div className="text-content">
               <h2>
@@ -103,7 +105,7 @@ const AppShowcase = () => {
               <div className="glow"></div>
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
-                  src="/images/project2.png"
+                  src={`${BASE_URL}/images/project2.png`}
                   alt="Library Management Platform"
                 />
               </div>
@@ -120,7 +122,7 @@ const AppShowcase = () => {
             >
               <div className="glow"></div>
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+                <img src={`${BASE_URL}/images/project3.png`} alt="YC Directory App" />
               </div>
               <h2>YC Directory - A Startup Showcase App</h2>
             </div>

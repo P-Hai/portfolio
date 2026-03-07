@@ -4,6 +4,8 @@
  * with a small offset from the top for better visual placement.
  */
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const Button = ({ text, className, id }) => {
   return (
     <a
@@ -31,7 +33,7 @@ const Button = ({ text, className, id }) => {
         <div className="bg-circle" />
         <p className="text">{text}</p>
         <div className="arrow-wrapper">
-          <img src="/images/arrow-down.svg" alt="arrow" />
+          <img src={`${BASE_URL}/images/arrow-down.svg`} alt="arrow" />
         </div>
       </div>
     </a>

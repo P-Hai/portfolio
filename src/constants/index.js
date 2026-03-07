@@ -17,15 +17,17 @@ const navLinks = [
   },
 ];
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const words = [
-  { text: "Scale", imgPath: "/images/ideas.svg" },
-  { text: "Speed", imgPath: "/images/speed.svg" },
-  { text: "Reliability", imgPath: "/images/reliability.png" },
-  { text: "Growth", imgPath: "/images/growth.svg" },
-  { text: "Scale", imgPath: "/images/ideas.svg" },
-  { text: "Speed", imgPath: "/images/speed.svg" },
-  { text: "Reliability", imgPath: "/images/reliability.png" },
-  { text: "Growth", imgPath: "/images/growth.svg" },
+  { text: "Scale", imgPath: `${BASE_URL}/images/ideas.svg` },
+  { text: "Speed", imgPath: `${BASE_URL}/images/speed.svg` },
+  { text: "Reliability", imgPath: `${BASE_URL}/images/reliability.png` },
+  { text: "Growth", imgPath: `${BASE_URL}/images/growth.svg` },
+  { text: "Scale", imgPath: `${BASE_URL}/images/ideas.svg` },
+  { text: "Speed", imgPath: `${BASE_URL}/images/speed.svg` },
+  { text: "Reliability", imgPath: `${BASE_URL}/images/reliability.png` },
+  { text: "Growth", imgPath: `${BASE_URL}/images/growth.svg` },
 ];
 
 const counterItems = [
@@ -37,53 +39,53 @@ const counterItems = [
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/company-logo-1.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-1.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-2.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-3.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-4.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-5.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-6.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-7.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-8.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-9.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-10.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-10.png`,
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
+    imgPath: `${BASE_URL}/images/logos/company-logo-11.png`,
   },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
+    imgPath: `${BASE_URL}/images/seo.png`,
     title: "Quality Focus",
     desc: "Delivering high-quality results while maintaining attention to every detail.",
   },
   {
-    imgPath: "/images/chat.png",
+    imgPath: `${BASE_URL}/images/chat.png`,
     title: "Reliable Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: "/images/time.png",
+    imgPath: `${BASE_URL}/images/time.png`,
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
@@ -92,54 +94,54 @@ const abilities = [
 const techStackImgs = [
   {
     name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    imgPath: `${BASE_URL}/images/logos/react.png`,
   },
   {
     name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    imgPath: `${BASE_URL}/images/logos/python.svg`,
   },
   {
     name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    imgPath: `${BASE_URL}/images/logos/node.png`,
   },
   {
     name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    imgPath: `${BASE_URL}/images/logos/three.png`,
   },
   {
     name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    imgPath: `${BASE_URL}/images/logos/git.svg`,
   },
 ];
 
 const techStackIcons = [
   {
     name: "Python",
-    modelPath: "/models/python-transformed.glb",
+    modelPath: `${BASE_URL}/models/python-transformed.glb`,
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
     name: "Cloud DataWarehouse",
-    modelPath: "/models/cloud.glb",
+    modelPath: `${BASE_URL}/models/cloud.glb`,
     scale: 1.2,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
     name: "Data Modeling",
-    modelPath: "/models/modeling.glb",
+    modelPath: `${BASE_URL}/models/modeling.glb`,
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
     name: "Advanced SQL",
-    modelPath: "/models/sql.glb",
+    modelPath: `${BASE_URL}/models/sql.glb`,
     scale: 5,
     rotation: [0, -Math.PI / 4, 0],
   },
   {
     name: "Data Pipelines",
-    modelPath: "/models/tube.glb",
+    modelPath: `${BASE_URL}/models/tube.glb`,
     scale: 0.7,
     rotation: [0, 0, 0],
   },
@@ -149,8 +151,8 @@ const expCards = [
   {
     review:
       "Hải brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As an Analytics Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making. ",
-    imgPath: "/images/affina.jpg",
-    logoPath: "/images/logo.jpg",
+    imgPath: `${BASE_URL}/images/affina.jpg`,
+    logoPath: `${BASE_URL}/images/logo.jpg`,
     title: "Analytics Engineer",
     date: "April 2025 - Present",
     responsibilities: [
@@ -164,15 +166,15 @@ const expCards = [
 const expLogos = [
   {
     name: "logo1",
-    imgPath: "/images/logo1.png",
+    imgPath: `${BASE_URL}/images/logo1.png`,
   },
   {
     name: "logo2",
-    imgPath: "/images/logo2.png",
+    imgPath: `${BASE_URL}/images/logo2.png`,
   },
   {
     name: "logo3",
-    imgPath: "/images/logo3.png",
+    imgPath: `${BASE_URL}/images/logo3.png`,
   },
 ];
 
@@ -181,21 +183,21 @@ const certifications = [
     title: "B2 APTIS Certificate",
     issuer: "British Council",
     date: "2025",
-    imgPath: "/images/aptis.png",
+    imgPath: `${BASE_URL}/images/aptis.png`,
     description: "English Language Proficiency",
   },
   {
     title: "SQL Certificate - HackerRank",
     issuer: "Professional SQL Developer",
     date: "2025",
-    imgPath: "/images/sql.webp",
+    imgPath: `${BASE_URL}/images/sql.webp`,
     description: "Database Management & Query Optimization",
   },
   {
     title: "Power BI Certificate - IBEP",
     issuer: "Microsoft Power BI",
     date: "2024",
-    imgPath: "/images/powerbi.jpg",
+    imgPath: `${BASE_URL}/images/powerbi.jpg`,
     description: "Data Visualization & Business Intelligence",
   },
 ];
@@ -204,22 +206,22 @@ const socialImgs = [
   {
     name: "insta",
     url: "https://www.instagram.com/im.marcus___/",
-    imgPath: "/images/insta.png",
+    imgPath: `${BASE_URL}/images/insta.png`,
   },
   {
     name: "fb",
     url: "https://chat.zalo.me/",
-    imgPath: "/images/zalo.png",
+    imgPath: `${BASE_URL}/images/zalo.png`,
   },
   {
     name: "facebook",
     url: "https://www.facebook.com/hai.nguyen.19020/",
-    imgPath: "/images/fb.png",
+    imgPath: `${BASE_URL}/images/fb.png`,
   },
   {
     name: "linkedin",
     url: "https://github.com/Marcus0175",
-    imgPath: "/images/github.jpg",
+    imgPath: `${BASE_URL}/images/github.jpg`,
   },
 ];
 
