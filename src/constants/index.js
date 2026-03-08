@@ -216,7 +216,7 @@ const socialImgs = [
   {
     name: "facebook",
     url: "https://www.facebook.com/hai.nguyen.19020/",
-    imgPath: `${BASE_URL}/images/fb.png`,
+    imgPath: `${BASE_URL}/images/facebook.jpg`,
   },
   {
     name: "linkedin",

@@ -1,3 +1,5 @@
+const BASE_URL = "/portfolio";
+
 export const translations = {
   en: {
     nav: {
@@ -18,6 +20,16 @@ export const translations = {
       description:
         "Nguyen Cao Phuc Hai - Analytics Engineer | Data Engineer | Data Analyst.",
       cta: "See My Work",
+      words: [
+        { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
+        { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+        { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
+        { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
+        { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
+        { text: "Speed", imgPath: BASE_URL + "/images/speed.svg" },
+        { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
+        { text: "Growth", imgPath: BASE_URL + "/images/growth.svg" },
+      ],
     },
     counter: [
       { value: 50, suffix: "+", label: "Projects" },
@@ -92,8 +104,8 @@ export const translations = {
       ],
     },
     contact: {
-      sectionBadge: "Have questions or ideas? Lets talk!",
-      sectionTitle: "Get in Touch - Lets Connect",
+      sectionBadge: "Have questions or ideas? Let's talk!",
+      sectionTitle: "Get in Touch - Let's Connect",
       nameLabel: "Your name",
       namePlaceholder: "What's your name?",
       emailLabel: "Your Email",
@@ -112,32 +124,42 @@ export const translations = {
     nav: {
       logo: "Portfolio Hải",
       links: {
-        work: "Dự án",
-        experience: "Kinh nghiệm",
-        skills: "Kỹ năng",
-        certifications: "Chứng chỉ",
+        work: "Dự Án",
+        experience: "Kinh Nghiệm",
+        skills: "Kỹ Năng",
+        certifications: "Chứng Chỉ",
       },
       contact: "Liên hệ",
     },
     hero: {
-      badge: "Chao mung den portfolio cua toi",
+      badge: "Chào mừng đến với portfolio của tôi",
       line1: "Xây dựng dữ liệu",
-      line2: "vào dự án thực tế",
-      line3: "mang lại kết quả",
+      line2: "đưa vào Thực Tế",
+      line3: "mang lại Kết Quả Thực",
       description:
         "Nguyễn Cao Phúc Hải - Kỹ sư Phân tích | Kỹ sư Dữ liệu | Chuyên viên Phân tích Dữ liệu.",
-      cta: "Dự án của tôi",
+      cta: "Dự Án Của Tôi",
+      words: [
+        { text: "Mở Rộng", imgPath: BASE_URL + "/images/ideas.svg" },
+        { text: "Nhanh", imgPath: BASE_URL + "/images/speed.svg" },
+        { text: "Ổn Định", imgPath: BASE_URL + "/images/reliability.png" },
+        { text: "Tin cậy", imgPath: BASE_URL + "/images/growth.svg" },
+        { text: "Mở Rộng", imgPath: BASE_URL + "/images/ideas.svg" },
+        { text: "Nhanh", imgPath: BASE_URL + "/images/speed.svg" },
+        { text: "Ổn Định", imgPath: BASE_URL + "/images/reliability.png" },
+        { text: "Tin cậy", imgPath: BASE_URL + "/images/growth.svg" },
+      ],
     },
     counter: [
-      { value: 50, suffix: "+", label: "Dự án" },
-      { value: 80, suffix: "+", label: "Khách hàng" },
-      { value: 100, suffix: "+", label: "Bộ dữ liệu" },
-      { value: 90, suffix: "%", label: "Công việc Tự động Hóa" },
+      { value: 50, suffix: "+", label: "Dự Án" },
+      { value: 80, suffix: "+", label: "Khách Hàng" },
+      { value: 100, suffix: "+", label: "Bộ Dữ Liệu" },
+      { value: 90, suffix: "%", label: "Công Việc Tự Động Hóa" },
     ],
     showcase: {
       project1: {
-        title: "Hệ thống gợi ý cho người dùng",
-        desc: "Xây dựng hệ thống gợi ý cho người dùng, được hỗ trợ bởi các pipeline dữ liệu tự động, chuyển đổi dữ liệu hành vi thành các dự đoán cá nhân hóa.",
+        title: "Hệ Thống Gợi Ý Người Dùng",
+        desc: "Xây dựng hệ thống gợi ý người dùng có thể mở rộng, được hỗ trợ bởi các pipeline dữ liệu tự động, chuyển đổi dữ liệu hành vi thô thành các dự đoán cá nhân hóa.",
       },
       project2: {
         title: "Nền Tảng Quản Lý Thư Viện",
@@ -147,73 +169,73 @@ export const translations = {
       },
     },
     experience: {
-      sectionBadge: "Tổng Quan Về Sự Nghiệp Của Tôi",
+      sectionBadge: "Tổng Quan Sự Nghiệp",
       sectionTitle: "Kinh Nghiệm Làm Việc",
       responsibilities: "Trách Nhiệm",
       cards: [
         {
-          title: "Kỹ sư Phân tích",
+          title: "Kỹ Sư Phân Tích",
           date: "Tháng 4 năm 2025 - Hiện tại",
           review:
-            "Hải mang đến tư duy phân tích mạnh mẽ và chuyên môn kỹ thuật vững chắc cho Affina, đóng góp vào việc cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất báo cáo. Là Kỹ sư Phân tích, anh tập trung vào việc xây dựng và chuẩn hóa các mô hình dữ liệu có khả năng mở rộng.",
+            "Hải mang đến tư duy phân tích mạnh mẽ và chuyên môn kỹ thuật vững chắc cho Affina, đóng góp vào việc cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất báo cáo. Là Kỹ sư Phân tích, anh tập trung vào việc xây dựng và chuẩn hóa các mô hình dữ liệu có khả năng mở rộng, đảm bảo các tập dữ liệu chính xác và đáng tin cậy hỗ trợ hiệu quả việc ra quyết định kinh doanh.",
           responsibilities: [
-            "Thiết kế, xây dựng và duy trì các mô hình dữ liệu và pipeline ELT có khả năng mở rộng.",
-            "Chuyển đổi dữ liệu thành thông tin sách, đã được xác thực và sẵn sàng cho doanh nghiệp.",
-            "Hợp tác với các bên liên quan để xác định yêu cầu dữ liệu và tối ưu hóa hiệu suất phân tích.",
+            "Thiết kế, xây dựng và duy trì các mô hình dữ liệu và pipeline ELT có khả năng mở rộng để đảm bảo bộ dữ liệu đáng tin cậy và có cấu trúc tốt.",
+            "Chuyển đổi dữ liệu thô thành thông tin sạch, đã được xác thực và sẵn sàng cho doanh nghiệp để hỗ trợ báo cáo và ra quyết định.",
+            "Hợp tác với các bên liên quan để xác định yêu cầu dữ liệu, cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất phân tích.",
           ],
         },
       ],
     },
     techStack: {
-      sectionBadge: "Những Gì Tôi Mang ại",
-      sectionTitle: "Kỹ Năng Chính",
+      sectionBadge: "Những Gì Tôi Mang Lại",
+      sectionTitle: "Kỹ Năng Chính Của Tôi",
       icons: [
         { name: "Python" },
-        { name: "Cloud" },
-        { name: "Mô hình hóa dữ liệu" },
-        { name: "SQL" },
-        { name: "Pipeline Dữ liệu" },
+        { name: "Kho Dữ Liệu Đám Mây" },
+        { name: "Mô Hình Hóa Dữ Liệu" },
+        { name: "SQL Nâng Cao" },
+        { name: "Pipeline Dữ Liệu" },
       ],
     },
     certifications: {
-      sectionBadge: "Bằng cấp & Chứng chỉ",
-      sectionTitle: "Chứng chỉ",
+      sectionBadge: "Bằng Cấp & Chứng Chỉ",
+      sectionTitle: "Chứng Chỉ",
       obtained: "Ngày cấp",
       items: [
         {
-          title: "Chứng chỉ APTIS B2",
-          issuer: "Hội đồng Anh",
+          title: "Chứng Chỉ APTIS B2",
+          issuer: "Hội Đồng Anh",
           date: "2025",
-          description: "Năng lực Tiếng Anh",
+          description: "Năng Lực Tiếng Anh",
         },
         {
-          title: "Chứng chỉ SQL - HackerRank",
+          title: "Chứng Chỉ SQL - HackerRank",
           issuer: "Lập Trình Viên SQL Chuyên Nghiệp",
           date: "2025",
-          description: "Quản Lý Cơ Sở Dữ Liệu & Tối Ưu Truy ấn",
+          description: "Quản Lý Cơ Sở Dữ Liệu & Tối Ưu Truy Vấn",
         },
         {
-          title: "Chứng chỉ Power BI - IBEP",
+          title: "Chứng Chỉ Power BI - IBEP",
           issuer: "Microsoft Power BI",
           date: "2024",
-          description: "Trực Quan hóa Dữ Liệu & Thông Minh Kinh Doanh",
+          description: "Trực Quan Hóa Dữ Liệu & Thông Minh Kinh Doanh",
         },
       ],
     },
     contact: {
-      sectionBadge: "Có câu hỏi hay ý tưởng? Hay nói chuyện!",
-      sectionTitle: "Liên Hệ - Hãy kết Nối",
+      sectionBadge: "Có câu hỏi hay ý tưởng? Hãy nói chuyện!",
+      sectionTitle: "Liên Hệ - Hãy Kết Nối",
       nameLabel: "Tên của bạn",
       namePlaceholder: "Bạn tên gì?",
       emailLabel: "Email của bạn",
       emailPlaceholder: "Địa chỉ email của bạn?",
       messageLabel: "Tin nhắn",
-      messagePlaceholder: "Để lại tin nhắn",
-      send: "Gửi tin nhắn",
+      messagePlaceholder: "Để lại tin nhắn cho tôi.",
+      send: "Gửi Tin Nhắn",
       sending: "Đang gửi...",
     },
     footer: {
-      rights: ".",
+      rights: "Đã đăng ký bản quyền.",
     },
   },
 };

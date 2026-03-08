@@ -7,19 +7,8 @@ import gsap from "gsap";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
-const words = [
-  { text: "Scale",       imgPath: BASE_URL + "/images/ideas.svg" },
-  { text: "Speed",       imgPath: BASE_URL + "/images/speed.svg" },
-  { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
-  { text: "Growth",      imgPath: BASE_URL + "/images/growth.svg" },
-  { text: "Scale",       imgPath: BASE_URL + "/images/ideas.svg" },
-  { text: "Speed",       imgPath: BASE_URL + "/images/speed.svg" },
-  { text: "Reliability", imgPath: BASE_URL + "/images/reliability.png" },
-  { text: "Growth",      imgPath: BASE_URL + "/images/growth.svg" },
-];
-
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useGSAP(() => {
     gsap.fromTo(
@@ -45,18 +34,17 @@ const Hero = () => {
               <p>{t.hero.badge}</p>
             </div>
 
-            {/* hero-text giữ nguyên class để animation hoạt động */}
             <div className="hero-text">
-              {/*
-                Dòng 1: "Building data for [slide]"
-                Dùng overflow:hidden + max-width để clip phần slide
-                không tràn ra ngoài cột trái
-              */}
               <h1 style={{ overflow: "hidden", maxWidth: "100%" }}>
                 <span style={{ whiteSpace: "nowrap" }}>{t.hero.line1}&nbsp;</span>
                 <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
+                  {/*
+                    key={language} — khi đổi ngôn ngữ, React unmount/remount
+                    toàn bộ .wrapper, animation CSS restart từ đầu,
+                    đảm bảo timing khớp với 8 words mới
+                  */}
+                  <span className="wrapper" key={language}>
+                    {t.hero.words.map((word, index) => (
                       <span
                         key={word.text + index}
                         className="flex items-center pb-2"
@@ -110,7 +98,6 @@ const Hero = () => {
           padding: 0 20px;
           z-index: 10;
           min-width: 0;
-          /* clip slide overflow trong cột trái */
           overflow: hidden;
         }
         .hero-right-col {
@@ -138,7 +125,6 @@ const Hero = () => {
             max-width: 46% !important;
             min-height: 400px;
           }
-          /* Thu nhỏ font ở laptop để vừa trong 54% cột */
           .hero-text {
             font-size: clamp(22px, 2.8vw, 44px) !important;
           }
