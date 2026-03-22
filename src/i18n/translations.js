@@ -43,10 +43,10 @@ export const translations = {
         desc: "Built a scalable user recommendation system powered by automated data pipelines, transforming raw behavioral data into personalized predictions.",
       },
       project2: {
-        title: "The Library Management Platform",
+        title: "Bank Transaction Processing Pipeline",
       },
       project3: {
-        title: "YC Directory - A Startup Showcase App",
+        title: "Vietnam Tourism Promotion App",
       },
     },
     experience: {
@@ -56,7 +56,7 @@ export const translations = {
       cards: [
         {
           title: "Analytics Engineer",
-          date: "April 2025 - Present",
+          date: "August 2025 - Present",
           review:
             "Hai brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As an Analytics Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making.",
           responsibilities: [
@@ -101,6 +101,12 @@ export const translations = {
           date: "2024",
           description: "Data Visualization & Business Intelligence",
         },
+        {
+          title: "English for IT - Netacad",
+          issuer: "Netacad",
+          date: "2025",
+          description: "Technical English for IT",
+        },
       ],
     },
     contact: {
@@ -116,7 +122,7 @@ export const translations = {
       sending: "Sending...",
     },
     footer: {
-      rights: "All rights reserved.",
+      rights: "",
     },
   },
 
@@ -158,14 +164,14 @@ export const translations = {
     ],
     showcase: {
       project1: {
-        title: "Hệ Thống Gợi Ý Người Dùng",
+        title: "Hệ thống gợi ý tiêu dùng",
         desc: "Xây dựng hệ thống gợi ý người dùng có thể mở rộng, được hỗ trợ bởi các pipeline dữ liệu tự động, chuyển đổi dữ liệu hành vi thô thành các dự đoán cá nhân hóa.",
       },
       project2: {
-        title: "Nền Tảng Quản Lý Thư Viện",
+        title: "Hệ thống pipeline xử lý giao dịch ngân hàng",
       },
       project3: {
-        title: "YC Directory - Ứng Dụng Giới Thiệu Startup",
+        title: "Ứng dụng quảng bá địa danh du lịch Việt Nam",
       },
     },
     experience: {
@@ -175,7 +181,7 @@ export const translations = {
       cards: [
         {
           title: "Kỹ Sư Phân Tích",
-          date: "Tháng 4 năm 2025 - Hiện tại",
+          date: "Tháng 8 năm 2025 - Hiện tại",
           review:
             "Hải mang đến tư duy phân tích mạnh mẽ và chuyên môn kỹ thuật vững chắc cho Affina, đóng góp vào việc cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất báo cáo. Là Kỹ sư Phân tích, anh tập trung vào việc xây dựng và chuẩn hóa các mô hình dữ liệu có khả năng mở rộng, đảm bảo các tập dữ liệu chính xác và đáng tin cậy hỗ trợ hiệu quả việc ra quyết định kinh doanh.",
           responsibilities: [
@@ -220,6 +226,12 @@ export const translations = {
           date: "2024",
           description: "Trực Quan Hóa Dữ Liệu & Thông Minh Kinh Doanh",
         },
+        {
+          title: "Chứng Chỉ English for IT - Netacad",
+          issuer: "Netacad",
+          date: "2025",
+          description: "Tiếng Anh Chuyên Ngành - Công Nghệ Thông Tin",
+        },
       ],
     },
     contact: {
@@ -235,7 +247,7 @@ export const translations = {
       sending: "Đang gửi...",
     },
     footer: {
-      rights: "Đã đăng ký bản quyền.",
+      rights: "",
     },
   },
 };

@@ -81,9 +81,14 @@ const AppShowcase = () => {
               onMouseMove={handleMouseMove(1)}
             >
               <div className="glow"></div>
-              <div className="image-wrapper bg-[#FFEFDB]">
-                <img src={BASE_URL + "/images/project2.png"} alt="Project 2" />
-              </div>
+              <a
+                href="https://github.com/Marcus0175/Banking-Transaction-Processing-Pipeline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="image-wrapper hover:opacity-80 transition-opacity duration-300 bg-[#FFEFDB]"
+              >
+                <img src={BASE_URL + "/images/bank.webp"} alt="Project 2" />
+              </a>
               <h2>{t.showcase.project2.title}</h2>
             </div>
 
@@ -93,9 +98,14 @@ const AppShowcase = () => {
               onMouseMove={handleMouseMove(2)}
             >
               <div className="glow"></div>
-              <div className="image-wrapper bg-[#FFE7EB]">
-                <img src={BASE_URL + "/images/project3.png"} alt="Project 3" />
-              </div>
+              <a
+                href="https://github.com/Marcus0175/Vietnam-Tourism-Promotion-Software"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="image-wrapper hover:opacity-80 transition-opacity duration-300 bg-[#FFE7EB]"
+              >
+                <img src={BASE_URL + "/images/vietnam.jpg"} alt="Project 3" />
+              </a>
               <h2>{t.showcase.project3.title}</h2>
             </div>
           </div>

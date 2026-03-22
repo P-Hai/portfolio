@@ -203,16 +203,16 @@ const certifications = [
 ];
 
 const socialImgs = [
-  {
-    name: "insta",
-    url: "https://www.instagram.com/im.marcus___/",
-    imgPath: `${BASE_URL}/images/instagram.jpg`,
-  },
-  {
-    name: "fb",
-    url: "https://chat.zalo.me/",
-    imgPath: `${BASE_URL}/images/zalo.png`,
-  },
+  // {
+  //   name: "insta",
+  //   url: "https://www.instagram.com/im.marcus___/",
+  //   imgPath: `${BASE_URL}/images/instagram.jpg`,
+  // },
+  // {
+  //   name: "fb",
+  //   url: "https://chat.zalo.me/",
+  //   imgPath: `${BASE_URL}/images/zalo.png`,
+  // },
   {
     name: "facebook",
     url: "https://www.facebook.com/hai.nguyen.19020/",

@@ -12,6 +12,7 @@ const certImgs = [
   `${BASE_URL}/images/aptis.png`,
   `${BASE_URL}/images/sql.webp`,
   `${BASE_URL}/images/powerbi.jpg`,
+  `${BASE_URL}/images/netacad.png`,
 ];
 
 const Certifications = () => {
@@ -33,7 +34,7 @@ const Certifications = () => {
           title={t.certifications.sectionTitle}
           sub={t.certifications.sectionBadge}
         />
-        <div className="grid-3-cols mt-16">
+        <div className="grid-4-cols mt-16">
           {t.certifications.items.map((cert, index) => (
             <div
               key={index}
