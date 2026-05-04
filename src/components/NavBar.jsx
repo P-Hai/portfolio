@@ -147,7 +147,7 @@ const NavBar = () => {
 
             {/* Language */}
             <div style={{
-              display: "flex",
+              display: "none",
               gap: "2px",
               backgroundColor: "rgba(255,255,255,0.06)",
               borderRadius: "10px",

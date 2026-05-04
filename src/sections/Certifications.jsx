@@ -9,9 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 const BASE_URL = import.meta.env.BASE_URL;
 
 const certImgs = [
-  `${BASE_URL}/images/aptis.png`,
+  `${BASE_URL}/images/toeic.jpg`,
   `${BASE_URL}/images/sql.webp`,
   `${BASE_URL}/images/powerbi.jpg`,
+  `${BASE_URL}/images/aptis.png`,
   `${BASE_URL}/images/netacad.png`,
 ];
 

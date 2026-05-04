@@ -150,11 +150,11 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Hải brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As an Analytics Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making. ",
+      "Hải brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As a Data Analyst / Data Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making. ",
     imgPath: `${BASE_URL}/images/affina.jpg`,
     logoPath: `${BASE_URL}/images/logo.jpg`,
-    title: "Analytics Engineer",
-    date: "April 2025 - Present",
+    title: "Data Analyst / Data Engineer",
+    date: "August 2025 - Present",
     responsibilities: [
       "Design, build, and maintain scalable data models and ELT pipelines to ensure reliable and well-structured datasets.",
       "Transform raw data into clean, validated, and business-ready insights to support reporting and decision-making.",

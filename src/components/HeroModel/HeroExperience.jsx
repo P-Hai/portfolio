@@ -73,7 +73,7 @@ const HeroExperience = () => {
           }}
         >
           <img
-            src={BASE_URL + "/images/anh2.jpg"}
+            src={BASE_URL + "/images/anh2.png"}
             alt="Phuc Hai alt"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />

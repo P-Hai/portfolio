@@ -18,7 +18,7 @@ export const translations = {
       line2: "into Real Projects",
       line3: "that Deliver Results",
       description:
-        "Nguyen Cao Phuc Hai - Analytics Engineer | Data Engineer | Data Analyst.",
+        "Nguyen Cao Phuc Hai - Data Analyst | Data Engineer | Data Analyst.",
       cta: "See My Work",
       words: [
         { text: "Scale", imgPath: BASE_URL + "/images/ideas.svg" },
@@ -55,10 +55,10 @@ export const translations = {
       responsibilities: "Responsibilities",
       cards: [
         {
-          title: "Analytics Engineer",
-          date: "August 2025 - Present",
+          title: "Data Analyst / Data Engineer",
+          date: "2025 - Present",
           review:
-            "Hai brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As an Analytics Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making.",
+            "Hai brings strong analytical thinking and solid technical expertise to Affina, contributing to improved data quality and optimized reporting performance. As a Data Analyst / Data Engineer, he focuses on building and standardizing scalable data models, ensuring accurate and reliable datasets that effectively support business decision-making.",
           responsibilities: [
             "Design, build, and maintain scalable data models and ELT pipelines to ensure reliable and well-structured datasets.",
             "Transform raw data into clean, validated, and business-ready insights to support reporting and decision-making.",
@@ -84,9 +84,9 @@ export const translations = {
       obtained: "Obtained",
       items: [
         {
-          title: "B2 APTIS Certificate",
-          issuer: "British Council",
-          date: "2025",
+          title: "TOEIC 795/990 Certificate",
+          issuer: "ETS",
+          date: "2026",
           description: "English Language Proficiency",
         },
         {
@@ -100,6 +100,12 @@ export const translations = {
           issuer: "Microsoft Power BI",
           date: "2024",
           description: "Data Visualization & Business Intelligence",
+        },
+        {
+          title: "B2 APTIS Certificate",
+          issuer: "British Council",
+          date: "2025",
+          description: "English Language Proficiency",
         },
         {
           title: "English for IT - Netacad",
@@ -180,10 +186,10 @@ export const translations = {
       responsibilities: "Trách Nhiệm",
       cards: [
         {
-          title: "Kỹ Sư Phân Tích",
-          date: "Tháng 8 năm 2025 - Hiện tại",
+          title: "Kỹ Sư Phân Tích / Kỹ Sư Dữ Liệu",
+          date: "2025 - Hiện tại",
           review:
-            "Hải mang đến tư duy phân tích mạnh mẽ và chuyên môn kỹ thuật vững chắc cho Affina, đóng góp vào việc cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất báo cáo. Là Kỹ sư Phân tích, anh tập trung vào việc xây dựng và chuẩn hóa các mô hình dữ liệu có khả năng mở rộng, đảm bảo các tập dữ liệu chính xác và đáng tin cậy hỗ trợ hiệu quả việc ra quyết định kinh doanh.",
+            "Hải mang đến tư duy phân tích mạnh mẽ và chuyên môn kỹ thuật vững chắc cho Affina, đóng góp vào việc cải thiện chất lượng dữ liệu và tối ưu hóa hiệu suất báo cáo. Là Kỹ sư Phân tích / Kỹ sư Dữ liệu, anh tập trung vào việc xây dựng và chuẩn hóa các mô hình dữ liệu có khả năng mở rộng, đảm bảo các tập dữ liệu chính xác và đáng tin cậy hỗ trợ hiệu quả việc ra quyết định kinh doanh.",
           responsibilities: [
             "Thiết kế, xây dựng và duy trì các mô hình dữ liệu và pipeline ELT có khả năng mở rộng để đảm bảo bộ dữ liệu đáng tin cậy và có cấu trúc tốt.",
             "Chuyển đổi dữ liệu thô thành thông tin sạch, đã được xác thực và sẵn sàng cho doanh nghiệp để hỗ trợ báo cáo và ra quyết định.",
@@ -209,9 +215,9 @@ export const translations = {
       obtained: "Ngày cấp",
       items: [
         {
-          title: "Chứng Chỉ APTIS B2",
-          issuer: "Hội Đồng Anh",
-          date: "2025",
+          title: "Chứng Chỉ TOEIC 795/990",
+          issuer: "ETS",
+          date: "2026",
           description: "Năng Lực Tiếng Anh",
         },
         {
@@ -225,6 +231,12 @@ export const translations = {
           issuer: "Microsoft Power BI",
           date: "2024",
           description: "Trực Quan Hóa Dữ Liệu & Thông Minh Kinh Doanh",
+        },
+        {
+          title: "Chứng Chỉ APTIS B2",
+          issuer: "Hội Đồng Anh",
+          date: "2025",
+          description: "Năng Lực Tiếng Anh",
         },
         {
           title: "Chứng Chỉ English for IT - Netacad",
